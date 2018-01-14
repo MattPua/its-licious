@@ -1,0 +1,40 @@
+<section class="restaurant-expanded">
+  <div class="fixed-info">
+    <app-card-summary [restaurant]="restaurant"></app-card-summary>
+    <div class="contact-info">
+
+    </div>
+  </div>
+  <div class="scrollable">
+    <div class="reservation">
+      <p>Make a Reservation Online</p>
+      <img src="/assets/open_table.png" alt="Open Table" />
+      <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary" [href]="restaurant.lic_lunchlink" target="_blank">Lunch</a>
+      <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary" [href]="restaurant.lic_dinnerlink" target="_blank">Dinner</a>
+    </div>
+    <div class="profile box">
+      <div class="title">Profile</div>
+      <div class="content">
+        {{restaurant.lic_profile}}
+      </div>
+    </div>
+    <div class="reviews box">
+      <div class="title">Reviews</div>
+      <div class="content">
+
+      </div>
+    </div>
+    <div class="menu box">
+      <div class="title">Menu</div>
+      <div class="content">
+        <ng-container *ngFor="let menuLine of restaurant.lic_dinnermenu">
+          <p [innerHtml]="menuLine | keepHtml"></p>
+        </ng-container>
+      </div>
+    </div>
+    <div class="neighbourhood box">
+      <div class="title">Neighbourhood</div>
+      <div class="content"></div>
+    </div>
+  </div>
+</section>

@@ -53,6 +53,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * Design Work
   * Logo creation
   * SVG optimization for load times
+  * things forgotten in design until coded
 
 ## Time Breakdown
 Design
@@ -60,4 +61,4 @@ Design
   - Logo: 1
 
 Dev
-  - Desktop: 2 + 2
+  - Desktop: 2 + 2 + 3

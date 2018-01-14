@@ -9,6 +9,9 @@ import { FilterComponent } from './components/filter/filter.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { RestaurantService } from './services/restaurant.service';
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
+import { CardSummaryComponent } from './components/card-summary/card-summary.component';
+import { RestaurantExpandedComponent } from './components/restaurant-expanded/restaurant-expanded.component';
+import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { RestaurantCardComponent } from './components/restaurant-card/restaurant
     FilterComponent,
     GalleryComponent,
     RestaurantCardComponent,
+    CardSummaryComponent,
+    RestaurantExpandedComponent,
+    EscapeHtmlPipe,
   ],
   imports: [
     BrowserModule,

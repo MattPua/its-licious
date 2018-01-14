@@ -2,7 +2,7 @@
 
 @import 'fonts';
 @import 'normalize';
-
+@import 'button';
 *, input, select {
   font-family: 'Gotham', Arial, Helvetica, sans-serif;
 }
@@ -18,4 +18,8 @@ ul {
 
 html {
   font-size: 12px;
+}
+
+a {
+  text-decoration: none;
 }

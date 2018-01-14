@@ -14,7 +14,7 @@ export class GalleryComponent implements OnInit {
   }
 
   get restaurants(): Restaurant[] {
-    return this.winterlicious.restaurants.slice(4, 40);
+    return this.winterlicious.restaurants.slice(0, 40);
   }
 
 }

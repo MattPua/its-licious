@@ -1,0 +1,31 @@
+@import './../../../master';
+
+.restaurant-expanded {
+  @extend .box-shadow;
+  border: 1px solid $border-gray;
+}
+
+.box {
+  margin: 20px 10px 20px 0;
+  border: 1px solid $border-gray;
+  @include border-radius(5px);
+  .title {
+    background-color: $primary-yellow;
+    color: white;
+    font-weight: bold;
+  }
+  .content {
+
+  }
+  .title, .content {
+    padding: 5px 10px;
+  }
+}
+
+.scrollable {
+  margin-left: 10px;
+}
+
+.menu .content {
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+@import 'master';
+
+.btn {
+  @include border-radius(5px);
+  text-align: center;
+  padding: 5px 25px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus, &:active {
+    border: 2px solid $border-gray;
+  }
+}
+
+.btn.btn-primary {
+  color: white;
+  background-color: $primary-yellow;
+
+  &:hover {
+    background-color: $btn-primary-active-yellow;
+  }
+}
+
+.btn.btn-secondary {
+  color: $font-gray;
+  border: 2px solid $border-gray;
+}
+
+.btn.disabled, .btn[disabled] {
+  opacity: 0.3;
+  border-color: $btn-disabled-gray;
+  background-color: $btn-disabled-gray;
+  cursor: not-allowed;
+  &:focus, &:hover, &:active {
+    background-color: $btn-disabled-gray;
+  }
+}

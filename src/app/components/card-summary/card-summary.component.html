@@ -1,0 +1,36 @@
+<div class="card-summary">
+  <b class="name">{{restaurant.lic_restName}}</b>
+  <div class="inner-content">
+    <div class="left">
+      <div class="cuisines">
+        <ng-container *ngFor="let cuisine of restaurant.lic_cuisine">
+          <span>{{cuisine}}</span>
+        </ng-container>
+      </div>
+      <span class="price">
+        {{restaurant.displayPrice}}
+      </span>
+    </div>
+    <div class="right">
+      <div class="ratings">
+        <img src="/assets/icons/full-star.svg" height="16" width="16" />
+        <img src="/assets/icons/full-star.svg" height="16" width="16" />
+        <img src="/assets/icons/full-star.svg" height="16" width="16" />
+        <img src="/assets/icons/full-star.svg" height="16" width="16" />
+        <img src="/assets/icons/full-star.svg" height="16" width="16" />
+        <!-- <object data="/assets/icons/full-star.svg" alt="Rating Star" type="image/svg+xml" height="16" width="16"></object> -->
+      </div>
+      <div class="preferences">
+        <img src="/assets/icons/accessible.svg" height="20" width="20" />
+        <img src="/assets/icons/spinach.svg" height="20" width="20" />
+        <img src="/assets/icons/basil.svg" height="20" width="20" />
+        <img src="/assets/icons/farm.svg" height="20" width="20" />
+<!--
+        <object data="/assets/icons/accessible.svg" alt="accessible" type="image/svg+xml" height="16" width="16"></object>
+        <object data="/assets/icons/spinach.svg" alt="Vegetarian Menu" type="image/svg+xml" height="16" width="16"></object>
+        <object data="/assets/icons/basil.svg" alt="Vegan Menu" type="image/svg+xml" height="16" width="16"></object>
+        <object data="/assets/icons/sprout.svg" alt="Locally Sourced Menu" type="image/svg+xml" height="16" width="16"></object> -->
+      </div>
+    </div>
+  </div>
+</div>
