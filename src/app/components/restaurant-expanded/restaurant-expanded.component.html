@@ -1,0 +1,81 @@
+<section class="restaurant-expanded">
+  <div class="fixed-info">
+    <div class="margin">
+      <i class="fa fa-chevron-left close" aria-hidden="true" (click)="resetSelectedRestaurant.emit()"></i>
+    </div>
+    <div class="content">
+      <app-card-summary [restaurant]="restaurant"></app-card-summary>
+      <app-contact-info [restaurant]="restaurant"></app-contact-info>
+    </div>
+  </div>
+  <div class="scrollable">
+    <div class="margin"></div>
+    <div class="content">
+      <div class="reservation">
+        <ng-container *ngIf="restaurant.hasOpenMenu">
+          <h3 class="title">
+            Make a Reservation with
+            <a href="https://www.opentable.com/toronto-restaurants" target="_blank"><img src="https://mattpua.github.io/its-licious/assets/open_table.png" alt="Open Table" height="40" /></a>
+          </h3>
+          <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary btn-large" [href]="restaurant.lic_lunchlink" target="_blank">Lunch</a>
+          <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary btn-large" [href]="restaurant.lic_dinnerlink" target="_blank">Dinner</a>
+        </ng-container>
+        <ng-container *ngIf="!restaurant.hasOpenMenu">
+          <h3 class="title">Make a Reservation, call now:</h3>
+          <a class="btn btn-primary btn-large" href="tel:{{restaurant.lic_dinnerlink}}" target="_blank">{{ restaurant.lic_phone}}</a>
+        </ng-container>
+      </div>
+      <div class="profile box">
+        <div class="title" (click)="showProfile = !showProfile">
+          Profile
+          <i class="fa" [class.fa-chevron-down]="showProfile" [class.fa-chevron-up]="!showProfile"  aria-hidden="true"></i>
+        </div>
+        <div class="content animated" [class.hide]="!showProfile" [innerHtml]="restaurant.lic_profile | keepHtml"></div>
+      </div>
+      <div class="reviews box">
+        <div class="title" (click)="showReviews = !showReviews">
+          Reviews
+          <i class="fa" [class.fa-chevron-down]="showReviews" [class.fa-chevron-up]="!showReviews"  aria-hidden="true"></i>
+        </div>
+        <div class="content" [class.hide]="!showReviews">
+          <app-social-review *ngFor="let review of reviews" [review]="review"></app-social-review>
+          <!-- <div>
+            <img class="previous" src="https://mattpua.github.io/its-licious/assets/icons/arrow-left.svg" alt="previous Review" height="16" width="16"/>
+            <span> /{{ reviews.length }} Reviews</span>
+            <img class="next" src="https://mattpua.github.io/its-licious/assets/icons/arrow-right.svg" alt="next review" height="16" width="16"/>
+          </div> -->
+        </div>
+      </div>
+      <div class="menu box">
+        <div class="title" (click)="showMenu = !showMenu">
+          Winterlicious Menu
+          <i class="fa" [class.fa-chevron-down]="showMenu" [class.fa-chevron-up]="!showMenu"  aria-hidden="true"></i>
+        </div>
+        <div class="content" [class.hide]="!showMenu">
+          <div class="btn-group">
+            <button class="btn" [class.active]="activeMenu === 'lunch'" (click)="activeMenu = 'lunch'" [disabled]="!restaurant.lic_lunchmenu.length">Lunch</button>
+            <button class="btn" [class.active]="activeMenu === 'dinner'" (click)="activeMenu = 'dinner'" [disabled]="!restaurant.lic_dinnermenu.length">Dinner</button>
+          </div>
+          <ng-container *ngIf="activeMenu === 'lunch'">
+            <p *ngFor="let menuLine of restaurant.lic_lunchmenu" [innerHtml]="menuLine | keepHtml"></p>
+          </ng-container>
+          <ng-container *ngIf="activeMenu === 'dinner'">
+            <p *ngFor="let menuLine of restaurant.lic_dinnermenu" [innerHtml]="menuLine | keepHtml"></p>
+          </ng-container>
+          <ng-container *ngIf="activeMenu === ''">
+            No Menu Available
+          </ng-container>
+        </div>
+      </div>
+      <div class="location box">
+        <div class="title">
+          Location
+        </div>
+        <div class="content">
+          <b class="neighbourhoods">Can be found around: {{neighbourhoods}}</b>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

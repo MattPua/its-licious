@@ -1,0 +1,139 @@
+@import './../../../master';
+
+
+.fixed-info, .restaurant-expanded {
+  width: $expanded-width;
+  @media(max-width: $bp-mobile-width) {
+    width: 100%;
+  }
+}
+.restaurant-expanded {
+  @extend .box-shadow;
+  // border: 1px solid $border-gray;
+  position: fixed;
+  top: $header-height;
+  background-color: white;
+  overflow: hidden;
+  height: 100%;
+}
+
+.box {
+  margin: 20px 10px 20px 0;
+  border: 1px solid $border-gray;
+  @include border-radius(5px);
+  .title {
+    background-color: $primary-yellow;
+    color: white;
+    font-size: 1.3rem;
+    justify-content: space-between;
+    display: flex;
+  }
+  .content {
+    line-height: 3rem;
+  }
+  .title, .content {
+    padding: 5px 10px;
+  }
+}
+
+
+.menu .content {
+  text-align: center;
+}
+
+:host ::ng-deep app-card-summary {
+  font-size: 1.5rem;
+  .name {
+    background-color: white;
+    color: initial;
+    border: 0;
+    font-weight: bold;
+  }
+}
+
+.fixed-info {
+  display: flex;
+  border-bottom: 1px solid $border-gray;
+  @extend .box-shadow;
+  > .margin {
+    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  > .content {
+    flex: 11;
+    padding: 10px 10px 10px 0;
+    margin-right: 10px;
+  }
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  background-color: white;
+
+  .close {
+    font-size: 2rem;
+    &:hover {
+      color: $primary-yellow;
+      cursor: pointer;
+    }
+  }
+}
+.scrollable {
+  display: flex;
+  position: relative;
+  top: $expanded-fixed-height;
+  > .margin {
+    flex-shrink: 0;
+    flex: 1;
+
+    @media(max-width: $bp-mobile-width) {
+      display: none;
+    }
+  }
+  > .content {
+    @media (max-width: $bp-mobile-width) {
+      margin-left: 10px;
+    }
+    flex: 11;
+    transition: 1s;
+    height: 100%;
+    overflow: auto;
+  }
+  height: 91vh;
+  overflow-y: auto;
+
+}
+
+
+.reservation {
+  text-align: center;
+  .title {
+    font-size: 2rem;
+    font-weight: normal;
+    color: $font-gray;
+  }
+}
+
+#map {
+  height: 400px;
+}
+
+.location {
+  padding-bottom: 200px;
+}
+
+.hide {
+  height: 0;
+  overflow: hidden;
+  #map {
+    height: 0;
+  }
+}
+
+// hide scrollbar
+.fixed-info, .restaurant-expanded, .scrollable {
+  right: 0;
+}

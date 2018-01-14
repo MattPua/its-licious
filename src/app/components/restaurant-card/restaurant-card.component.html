@@ -1,0 +1,16 @@
+<div class="restaurant" [class.selected]="isSelected" (click)="selectCard.emit(restaurant)">
+  <span class="index">{{index + 1}}</span>
+  <div class="images">
+    <img [src]="image" alt="restaurant image"/>
+  </div>
+  <app-card-summary [restaurant]="restaurant"></app-card-summary>
+  <div class="location">
+    <img src="https://mattpua.github.io/its-licious/assets/icons/map-marker-borderless.svg" height="16" width="16" />
+     <!-- <object data="https://mattpua.github.io/its-licious/assets/icons/map-marker-red-icon.svg" alt="Map Marker" type="image/svg+xml" height="16" width="16"></object> -->
+    <div class="neighbourhoods">
+      <ng-container *ngFor="let neighbourhood of restaurant.lic_neighbourhood; let last = last;">
+        <span>{{neighbourhood}}{{ !last ? ',': ''}}</span>
+      </ng-container>
+    </div>
+  </div>
+</div>

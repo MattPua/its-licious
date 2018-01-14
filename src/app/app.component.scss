@@ -1,0 +1,75 @@
+@import './../master';
+.content {
+  display: flex;
+  position: relative;
+
+  app-filter {
+    // flex: 1;
+    z-index: 3;
+
+    @media(max-width: $bp-mobile-width) {
+      &:not(.show-mobile) {
+        display: none;
+      }
+    }
+
+
+
+    // width: 100%;
+  }
+  app-gallery {
+    flex: 1;
+    z-index: 0;
+  }
+  app-restaurant-expanded {
+    // flex: 3;
+    z-index: 3;
+  }
+  app-map {
+    flex: 3;
+    z-index: 1;
+  }
+
+  .scrollable {
+    top: $header-height;
+    position: relative;
+    flex: 1;
+  }
+}
+
+.buttons {
+  z-index: 1;
+  right: 0;
+  background-color: $background-light-gray;
+  position: relative;
+  text-align: right;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  &.is-absolute {
+    position: absolute;
+    padding: 0;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+  }
+}
+.floating {
+  top: 100px;
+  left: 20px;
+  position: fixed;
+  background-color: $primary-yellow;
+  color: #fff;
+  padding: 5px;
+  @include border-radius(50%);
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @extend .box-shadow;
+  z-index: 2;
+  i {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="yelp-rating" [ngSwitch]="rating">
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_0.png" alt="0 stars" *ngSwitchCase="0"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_1.png" alt="1 stars" *ngSwitchCase="1"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_1_half.png" alt="1.5 stars" *ngSwitchCase="1.5"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_2.png" alt="2 stars" *ngSwitchCase="2"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_2_half.png" alt="2.5 stars" *ngSwitchCase="2.5"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_3.png" alt="3 stars" *ngSwitchCase="3"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_3_half.png" alt="3.5 stars" *ngSwitchCase="3.5"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_4.png" alt="4 stars" *ngSwitchCase="4"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_4_half.png" alt="4.5 stars" *ngSwitchCase="4.5"/>
+  <img src="https://mattpua.github.io/its-licious/assets/yelp/regular/regular_5.png" alt="55 stars" *ngSwitchCase="5"/>
+  <p *ngIf="showFullDetails">{{yelpData.reviewCount}} reviews</p>
+  <a *ngIf="showFullDetails"[href]="yelpData.yelpUrl" target="_blank">
+    <img class="logo" src="https://mattpua.github.io/its-licious/assets/yelp/Yelp_trademark_RGB_outline.png" alt="Yelp Logo" />
+  </a>
+</div>
