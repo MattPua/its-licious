@@ -36,6 +36,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Google Reviews
 * Instagram
 * Twitter
+* service workers
 
 
 
@@ -48,9 +49,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * using instagram photos for accounts, then legal issues
   * doing desktop first
 * Angular 5
-
-
+* Pain Points:
+  * Design Work
+  * Logo creation
+  * SVG optimization for load times
 
 ## Time Breakdown
 Design
-  - Desktop: 2 + 3 + 4 + 2
+  - Desktop: 2 + 3 + 4 + 3
+  - Logo: 1
+
+Dev
+  - Desktop: 2 + 2

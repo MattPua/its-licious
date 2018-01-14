@@ -1,0 +1,14 @@
+@import '../../../master';
+
+nav {
+  @extend .box-shadow;
+  background-color: $primary-yellow;
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .logo {
+    width: 30%;
+  }
+}

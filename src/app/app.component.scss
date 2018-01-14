@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+
+  app-filter {
+    flex: 1;
+  }
+  app-gallery {
+    flex: 3;
+  }
+
+}

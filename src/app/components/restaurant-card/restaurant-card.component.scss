@@ -1,0 +1,89 @@
+@import './../../../master';
+
+
+.images, .content, .location{
+  padding: 5px;
+}
+
+.images {
+  flex-shrink: 0;
+  img {
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+    width: 100%;
+  }
+  // max-width: 300px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  // justify-content: space-between;
+  flex-direction: column;
+
+  .inner-content {
+    display: flex;
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .price {
+      font-weight: lighter;
+    }
+    .cuisines {
+      font-weight: normal;
+    }
+  }
+  .name {
+    font-size: 1.3rem;
+  }
+}
+
+.restaurant {
+  border: 1px solid $border-gray;
+  @include border-radius(2px);
+  @extend .box-shadow;
+  flex: 1;
+  flex-shrink: 0;
+  color: $font-light-gray;
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.location {
+  border-top: 1px solid $border-gray;
+  display: flex;
+  background-color: $primary-yellow;
+  color: white;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.index {
+  position: absolute;
+  background-color: $primary-yellow;
+  // border: 1px solid $pri;
+  top: -10px;
+  left: -10px;
+  color: white;
+  @extend .box-shadow;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  @include border-radius(50%);
+  text-align: center;
+}
