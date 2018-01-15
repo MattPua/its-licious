@@ -54,6 +54,10 @@ export class Restaurant {
     }
     else return '';
   }
+
+  get hasOpenMenu(): boolean {
+    return !!this.lic_lunchlink ||  !!this.lic_dinnerlink;
+  }
 }
 
 export class YelpReview {

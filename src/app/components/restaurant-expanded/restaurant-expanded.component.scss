@@ -12,7 +12,7 @@
   .title {
     background-color: $primary-yellow;
     color: white;
-    font-weight: bold;
+    font-size: 1.3rem;
   }
   .content {
     line-height: 3rem;
@@ -57,5 +57,14 @@
   }
   > .content {
     flex: 11;
+  }
+}
+
+.reservation {
+  text-align: center;
+  .title {
+    font-size: 2rem;
+    font-weight: normal;
+    color: $font-gray;
   }
 }

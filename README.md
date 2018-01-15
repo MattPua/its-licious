@@ -72,7 +72,7 @@ Design
   - Logo: 1
 
 Dev
-  - Desktop: 2 + 2 + 3 + 2
+  - Desktop: 2 + 2 + 3 + 2 + 3
   - API:
     - Yelp: 1.5 + 2
     - google: 1 + 2

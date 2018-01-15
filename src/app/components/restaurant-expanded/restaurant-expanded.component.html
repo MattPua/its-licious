@@ -13,10 +13,18 @@
     <div class="margin"></div>
     <div class="content">
       <div class="reservation">
-        <p>Make a Reservation Online</p>
-        <img src="/assets/open_table.png" alt="Open Table" />
-        <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary" [href]="restaurant.lic_lunchlink" target="_blank">Lunch</a>
-        <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary" [href]="restaurant.lic_dinnerlink" target="_blank">Dinner</a>
+        <ng-container *ngIf="restaurant.hasOpenMenu">
+          <h3 class="title">
+            Make a Reservation with
+            <a href="https://www.opentable.com/toronto-restaurants" target="_blank"><img src="/assets/open_table.png" alt="Open Table" height="40" /></a>
+          </h3>
+          <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary btn-large" [href]="restaurant.lic_lunchlink" target="_blank">Lunch</a>
+          <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary btn-large" [href]="restaurant.lic_dinnerlink" target="_blank">Dinner</a>
+        </ng-container>
+        <ng-container *ngIf="!restaurant.hasOpenMenu">
+          <h3 class="title">Make a Reservation, call now:</h3>
+          <a class="btn btn-primary btn-large" href="tel:{{restaurant.lic_dinnerlink}}" target="_blank">{{ restaurant.lic_phone}}</a>
+        </ng-container>
       </div>
       <div class="profile box">
         <div class="title">Profile</div>
