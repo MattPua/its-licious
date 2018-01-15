@@ -9,7 +9,8 @@ const yelpBusinessUrl = 'https://api.yelp.com/v3/businesses/';
 
 
 function getBusinessReviewsById(r) {
-  return axios.get(yelpBusinessUrl + r.yelpData.yelpId + '/reviews', {
+  if (r.yelpData.reviews && r.yelpData.reviews.length > 0) return r;
+  return axios.get(yelpBusinessUrl + encodeURIComponent(r.yelpData.yelpId) + '/reviews', {
     headers: {
       Authorization: yelpBearerToken
     }
@@ -30,11 +31,21 @@ function getBusinessReviewsById(r) {
       console.error('could not find yelp review data for restaurant: '  + r.lic_name);
     }
     return r;
+  }).catch((err) => {
+    console.error('failed when retrieving yelp review data for : ' + r.lic_restName);
+    return null;
   });
 }
 
 function lookupBusinessByYelpId(r) {
-  return axios.get(yelpBusinessUrl + r.yelpData.yelpId, {
+  if (r.yelpData.imageUrl && r.yelpData.imageUrl.length > 0) {
+    return r;
+  }
+
+  return axios.get(yelpBusinessUrl + encodeURIComponent(r.yelpData.yelpId), {
+    params: {
+      locale: 'en_US'
+    },
     headers: {
       Authorization: yelpBearerToken
     }
@@ -48,10 +59,15 @@ function lookupBusinessByYelpId(r) {
       r.yelpData.yelpUrl = data.url;
     }
     else {
-      console.error('could not find yelp business data for restaurant: '  + r.lic_name);
+      console.error('could not find yelp business data for restaurant: '  + r.lic_restName);
     }
 
     return getBusinessReviewsById(r);
+  })
+  .catch((err) => {
+    console.error(err.data.response);
+    console.error('failed when retrieving yelp business information for restaurant: ' + r.lic_restName);
+    return null;
   });
 }
 
@@ -65,9 +81,11 @@ module.exports.lookupYelpIdByParams =  function(r){
     phone: r.lic_phone,
     latitude: r.lic_lat,
     longitude: r.lic_lng,
-    postal_code: r.lic_postal
+    postal_code: r.lic_postal,
+    locale: 'en_US'
   };
 
+  // if (r.yelpData && r.yelpData.yelpId) return r;
 
   return axios.get(yelpLookupUrl, {
     params: yelpParams,
@@ -84,12 +102,17 @@ module.exports.lookupYelpIdByParams =  function(r){
       r.yelpData = {
         yelpId: data.businesses[0].id
       }
+      // TODO: maybe promises.all here
       return lookupBusinessByYelpId(r);
     }
     else {
-      console.log(yelpParams);
       console.error('could not find Yelp ID for restaurant: ' + r.lic_restName);
       return null;
     }
+  })
+  .catch((err) => {
+    console.error(err.message);
+    console.error('failed when doing lookup on yelp data for : ' + r.lic_restName);
+    return null;
   });
 }
