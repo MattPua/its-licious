@@ -54,6 +54,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * Logo creation
   * SVG optimization for load times
   * things forgotten in design until coded
+* Yelp
+  * how to get yelp IDs to not call every time
 
 ## Time Breakdown
 Design
@@ -62,3 +64,19 @@ Design
 
 Dev
   - Desktop: 2 + 2 + 3
+  - API:
+    - Yelp: 1.5
+    - google: 1
+
+
+
+Yelp
+
+api key
+0lD2D12X6OhLJC-qHYC6EA3_kId5eJMAsDowjFFpKt6OzNaqPjhY2tGDomf1K84UYi1dubCiVCmczQSd-AS4x3DGOx-WhUSZST3s6zBSD2wNoV0twrWO-c2b0cNbWnYx
+
+
+
+google
+api key
+AIzaSyCZppcuiAk4bP42xVWMCLmaZ4Why51j3Oc

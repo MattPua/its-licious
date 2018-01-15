@@ -37,6 +37,20 @@ export class Restaurant {
   lic_lunchmenu: string[] = [];
   lic_additionaladdress: string;
 
+
+  yelpData: {
+    yelpId?: string;
+    imageUrl: string;
+    photos: string[];
+    rating: number;
+    reviewCount: number;
+    yelpUrl: string;
+    reviews: YelpReview[];
+  };
+  googleData: {
+    googlePlaceId: string;
+  };
+
   _displayPrice: string;
   get displayPrice(): string {
     if (this.lic_lunchprice && this.lic_dinnerprice) {
@@ -50,4 +64,12 @@ export class Restaurant {
     }
     else return '';
   }
+}
+
+export class YelpReview {
+  id: string;
+  text: string;
+  url: string;
+  rating: number;
+  timeCreated: string;
 }
