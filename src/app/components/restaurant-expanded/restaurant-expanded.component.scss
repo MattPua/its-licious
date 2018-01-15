@@ -27,11 +27,14 @@
   text-align: center;
 }
 
-:host ::ng-deep .name {
-  background-color: $primary-yellow;
-  background-color: white;
-  color: initial;
-  border: 0;
+:host ::ng-deep app-card-summary {
+  font-size: 1.5rem;
+  .name {
+    background-color: white;
+    color: initial;
+    border: 0;
+    font-weight: bold;
+  }
 }
 
 .fixed-info {
@@ -42,11 +45,13 @@
     flex-shrink: 0;
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 20px;
   }
   > .content {
     flex: 11;
+    padding: 10px 10px 10px 0;
   }
 }
 .scrollable {

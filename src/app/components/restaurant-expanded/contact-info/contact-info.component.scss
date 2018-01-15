@@ -1,0 +1,18 @@
+@import './../../../../master';
+
+.contact-info {
+  padding-top: 10px;
+  padding-left: 5px;
+  border-top: 1px solid $border-gray;
+  display: flex;
+  font-size: 1.5rem;
+}
+.social-icons {
+  flex: 1;
+}
+
+.telephone {
+  display: flex;
+  align-content: center;
+  color: $font-light-gray;
+}

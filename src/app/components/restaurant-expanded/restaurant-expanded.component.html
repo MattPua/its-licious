@@ -1,12 +1,11 @@
 <section class="restaurant-expanded">
   <div class="fixed-info">
     <div class="margin">
-      <img class="back" src="/assets/icons/chevron-left.svg" alt="close" height="24" width="24" (click)="resetSelectedRestaurant.emit()"/>
+      <img class="back" src="/assets/icons/chevron-left.svg" alt="close" height="32" width="32" (click)="resetSelectedRestaurant.emit()"/>
     </div>
     <div class="content">
       <app-card-summary [restaurant]="restaurant"></app-card-summary>
-      <div class="contact-info">
-      </div>
+      <app-contact-info [restaurant]="restaurant"></app-contact-info>
     </div>
   </div>
   <div class="scrollable">

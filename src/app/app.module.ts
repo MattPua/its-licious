@@ -14,6 +14,7 @@ import { RestaurantExpandedComponent } from './components/restaurant-expanded/re
 import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 import { YelpRatingComponent } from './components/yelp-rating/yelp-rating.component';
 import { SocialReviewComponent } from './components/social-review/social-review.component';
+import { ContactInfoComponent } from './components/restaurant-expanded/contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SocialReviewComponent } from './components/social-review/social-review.
     EscapeHtmlPipe,
     YelpRatingComponent,
     SocialReviewComponent,
+    ContactInfoComponent,
   ],
   imports: [
     BrowserModule,

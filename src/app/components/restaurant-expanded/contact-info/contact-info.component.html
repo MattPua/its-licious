@@ -1,0 +1,22 @@
+<div class="contact-info">
+  <div class="social-icons">
+    <a [href]="restaurant.lic_fb" target="_blank">
+      <img src="/assets/icons/facebook.svg" alt="Facebook" height="24" width="24" />
+    </a>
+    <a [href]="restaurant.lic_instagram" target="_blank">
+      <img src="/assets/icons/instagram.svg" alt="instagram" height="24" width="24" />
+    </a>
+    <a [href]="restaurant.lic_twit" target="_blank">
+      <img src="/assets/icons/twitter.svg" alt="twitter" height="24" width="24" />
+    </a>
+    <a [href]="restaurant.lic_url" target="_blank">
+      <img src="/assets/icons/website.svg" alt="website" height="24" width="24" />
+    </a>
+  </div>
+  <div class="telephone">
+    <a href="tel:{{restaurant.lic_phone}}" target="_blank">
+      <img src="/assets/icons/phone.svg" alt="telephone" height="24" width="24" />
+    </a>
+    <span>{{ restaurant.lic_phone }}</span>
+  </div>
+</div>
