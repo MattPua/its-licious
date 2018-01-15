@@ -38,18 +38,8 @@ export class Restaurant {
   lic_additionaladdress: string;
 
 
-  yelpData: {
-    yelpId?: string;
-    imageUrl: string;
-    photos: string[];
-    rating: number;
-    reviewCount: number;
-    yelpUrl: string;
-    reviews: YelpReview[];
-  };
-  googleData: {
-    googlePlaceId: string;
-  };
+  yelpData: YelpData;
+  googleData: GoogleData;
 
   _displayPrice: string;
   get displayPrice(): string {
@@ -67,9 +57,34 @@ export class Restaurant {
 }
 
 export class YelpReview {
+  constructor() {}
   id: string;
   text: string;
   url: string;
   rating: number;
   timeCreated: string;
+}
+
+export class GoogleReview {
+  constructor() {}
+  authorUrl: string;
+  rating: number;
+  time: number;
+  text: string;
+}
+
+export class YelpData {
+  yelpId: string;
+  imageUrl: string;
+  photos: string[];
+  rating: number;
+  reviewCount: number;
+  yelpUrl: string;
+  reviews: YelpReview[];
+}
+export class GoogleData {
+  googlePlaceId: string;
+  rating: number;
+  reviews: GoogleReview[];
+  url: string;
 }

@@ -1,4 +1,4 @@
-<div class="restaurant">
+<div class="restaurant" [class.selected]="isSelected" (click)="selectCard.emit(restaurant)">
   <span class="index">{{index + 1}}</span>
   <div class="images">
     <img [src]="image" alt="restaurant image"/>

@@ -1,8 +1,11 @@
+@import './../../../master';
+
 .card-summary {
   padding: 5px;
   display: flex;
   // justify-content: space-between;
   flex-direction: column;
+  background-color: white;
 
   .inner-content {
     display: flex;
@@ -10,22 +13,29 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: flex-end;
     }
     .left {
       flex: 2;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
     }
     .price {
-      font-weight: lighter;
+      font-weight: 300;
     }
     .cuisines {
       font-weight: normal;
     }
   }
-  .name {
-    font-size: 1.3rem;
-  }
+}
+
+.name {
+  padding: 5px;
+  font-size: 1.3em;
+  background-color: $background-gray;
+  color: white;
+  border-top: 1px solid $border-gray;
+  border-bottom: 1px solid $border-gray;
 }

@@ -2,7 +2,7 @@
   <app-header></app-header>
   <section class="content">
     <app-filter [winterlicious]="winterlicious"></app-filter>
-    <app-gallery [winterlicious]="winterlicious"></app-gallery>
-    <app-restaurant-expanded [restaurant]="winterlicious.restaurants[0]"></app-restaurant-expanded>
+    <app-gallery (selectCard)="onSelectCard($event)" [winterlicious]="winterlicious" [selectedRestaurant]="selectedRestaurant"></app-gallery>
+    <app-restaurant-expanded *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant" (resetSelectedRestaurant)="selectedRestaurant = null" ></app-restaurant-expanded>
   </section>
 </main>

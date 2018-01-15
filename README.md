@@ -56,6 +56,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * things forgotten in design until coded
 * Yelp
   * how to get yelp IDs to not call every time
+  * issues when doing lookups with places with special characters due to encoding issues
+    * had to encode requests for business IDs
+  * automating retrieving data to not have to do it on the front end
+  * changing design to fit Yelp guidelines on card
+
+* google
+  * query limits, but expanded while still free
+  * textbased search is 10x more expensive than nearby search
+  * nearbysearch wasn't always getting the results you needed
 
 ## Time Breakdown
 Design
@@ -63,10 +72,10 @@ Design
   - Logo: 1
 
 Dev
-  - Desktop: 2 + 2 + 3
+  - Desktop: 2 + 2 + 3 + 2
   - API:
-    - Yelp: 1.5
-    - google: 1
+    - Yelp: 1.5 + 2
+    - google: 1 + 2
 
 
 

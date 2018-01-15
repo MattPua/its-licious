@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Restaurant } from '../../classes/winterlicious';
 
 @Component({
@@ -9,10 +9,11 @@ import { Restaurant } from '../../classes/winterlicious';
 export class RestaurantCardComponent implements OnInit {
   @Input() restaurant: Restaurant;
   @Input() index: number;
+  @Input() isSelected = false;
+  @Output() selectCard: EventEmitter<Restaurant> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
-    console.log(this.restaurant);
   }
 
   get image(): string {

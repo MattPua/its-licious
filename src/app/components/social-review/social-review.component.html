@@ -1,0 +1,14 @@
+<section class="review">
+  <div class="top-row">
+    <b>{{ formattedDate }}</b>
+    <app-yelp-rating [reviewRating]="review.rating" [showFullDetails]="false"></app-yelp-rating>
+  </div>
+  <p>{{ review.text }} <a class="read-more" *ngIf="isYelpReview" [href]="review.url" target="_blank">Read More</a></p>
+  <div class="attribution">
+    <b>{{reviewPosterType}}</b>
+    <a [href]="url" target="_blank">
+      <img *ngIf="isYelpReview" class="logo" src="/assets/yelp/Yelp_trademark_RGB_outline.png" alt="Yelp Logo" height="50" />
+      <img *ngIf="isGoogleReview" class="logo" src="/assets/google/powered-by-google/desktop/powered_by_google_on_white.png" alt="Google Logo" height="18" />
+    </a>
+  </div>
+</section>

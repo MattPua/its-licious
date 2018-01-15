@@ -37,7 +37,7 @@
 .location {
   border-top: 1px solid $border-gray;
   display: flex;
-  background-color: $primary-yellow;
+  background-color: $border-gray;
   color: white;
   flex-shrink: 0;
   align-items: center;
@@ -45,7 +45,7 @@
 
 .index {
   position: absolute;
-  background-color: $primary-yellow;
+  background-color: $background-gray;
   // border: 1px solid $pri;
   top: -10px;
   left: -10px;
@@ -61,4 +61,10 @@
 
 app-card-summary {
   flex: 1;
+}
+
+.restaurant.selected {
+  .index, .location, ::ng-deep .name {
+    background-color: $primary-yellow;
+  }
 }

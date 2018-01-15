@@ -15,17 +15,47 @@
     font-weight: bold;
   }
   .content {
-
+    line-height: 3rem;
   }
   .title, .content {
     padding: 5px 10px;
   }
 }
 
-.scrollable {
-  margin-left: 10px;
-}
 
 .menu .content {
   text-align: center;
+}
+
+:host ::ng-deep .name {
+  background-color: $primary-yellow;
+  background-color: white;
+  color: initial;
+  border: 0;
+}
+
+.fixed-info {
+  display: flex;
+  border-bottom: 1px solid $border-gray;
+  @extend .box-shadow;
+  > .margin {
+    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  > .content {
+    flex: 11;
+  }
+}
+.scrollable {
+  display: flex;
+  > .margin {
+    flex-shrink: 0;
+    flex: 1;
+  }
+  > .content {
+    flex: 11;
+  }
 }

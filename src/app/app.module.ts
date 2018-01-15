@@ -12,6 +12,8 @@ import { RestaurantCardComponent } from './components/restaurant-card/restaurant
 import { CardSummaryComponent } from './components/card-summary/card-summary.component';
 import { RestaurantExpandedComponent } from './components/restaurant-expanded/restaurant-expanded.component';
 import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
+import { YelpRatingComponent } from './components/yelp-rating/yelp-rating.component';
+import { SocialReviewComponent } from './components/social-review/social-review.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
     CardSummaryComponent,
     RestaurantExpandedComponent,
     EscapeHtmlPipe,
+    YelpRatingComponent,
+    SocialReviewComponent,
   ],
   imports: [
     BrowserModule,
