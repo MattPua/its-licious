@@ -85,7 +85,10 @@ module.exports.lookupYelpIdByParams =  function(r){
     locale: 'en_US'
   };
 
-  // if (r.yelpData && r.yelpData.yelpId) return r;
+  if (r.yelpData && r.yelpData.yelpId) {
+    if (!r.yelpData.reviews || r.yelpData.reviews.length === 0) return getBusinessReviewsById(r);
+    else return r;
+  }
 
   return axios.get(yelpLookupUrl, {
     params: yelpParams,

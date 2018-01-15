@@ -9,9 +9,8 @@ try {
 
   let promisesArray = [];
   for (let r of sourceData.restaurants) {
-      promisesArray.push(yelp.lookupYelpIdByParams(r));
-    // if (!r.googleData || r.googleData.googlePlaceId)
-      // promisesArray.push(google.getGooglePlaceIdByParams(r));
+      // promisesArray.push(yelp.lookupYelpIdByParams(r));
+      promisesArray.push(google.getGooglePlaceIdByParams(r));
   }
   Promise.all(promisesArray).then(() => {
 
