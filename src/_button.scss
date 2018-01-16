@@ -4,12 +4,19 @@
   @include border-radius(5px);
   text-align: center;
   padding: 5px 25px;
+  outline: none;
   &:hover {
     cursor: pointer;
   }
   &:focus, &:active {
     border: 2px solid $border-gray;
+    border-color: $primary-yellow;
   }
+}
+.btn.active {
+  background-color: $primary-yellow;
+  border-color: $primary-yellow;
+  color: white;
 }
 
 .btn.btn-primary {

@@ -43,9 +43,19 @@
       <div class="menu box">
         <div class="title">Menu</div>
         <div class="content">
-          <!-- <ng-container *ngFor="let menuLine of restaurant.lic_dinnermenu">
-            <p [innerHtml]="menuLine | keepHtml"></p>
-          </ng-container> -->
+          <div class="btn-group">
+            <button class="btn" [class.active]="activeMenu === 'lunch'" (click)="activeMenu = 'lunch'" [disabled]="!restaurant.lic_lunchmenu.length">Lunch</button>
+            <button class="btn" [class.active]="activeMenu === 'dinner'" (click)="activeMenu = 'dinner'" [disabled]="!restaurant.lic_dinnermenu.length">Dinner</button>
+          </div>
+          <ng-container *ngIf="activeMenu === 'lunch'">
+            <p *ngFor="let menuLine of restaurant.lic_lunchmenu" [innerHtml]="menuLine | keepHtml"></p>
+          </ng-container>
+          <ng-container *ngIf="activeMenu === 'dinner'">
+            <p *ngFor="let menuLine of restaurant.lic_dinnermenu" [innerHtml]="menuLine | keepHtml"></p>
+          </ng-container>
+          <ng-container *ngIf="activeMenu === ''">
+            No Menu Available
+          </ng-container>
         </div>
       </div>
       <div class="neighbourhood box">
