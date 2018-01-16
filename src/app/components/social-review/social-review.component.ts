@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { YelpReview, GoogleReview } from '../../classes/winterlicious';
-const moment = require('moment');
+import * as moment from 'moment';
 @Component({
   selector: 'app-social-review',
   templateUrl: './social-review.component.html',
