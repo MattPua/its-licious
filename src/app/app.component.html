@@ -1,8 +1,0 @@
-<main>
-  <app-header></app-header>
-  <section class="content">
-    <app-filter [winterlicious]="winterlicious"></app-filter>
-    <app-gallery (selectCard)="onSelectCard($event)" [winterlicious]="winterlicious" [selectedRestaurant]="selectedRestaurant"></app-gallery>
-    <app-restaurant-expanded *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant" (resetSelectedRestaurant)="selectedRestaurant = null" ></app-restaurant-expanded>
-  </section>
-</main>

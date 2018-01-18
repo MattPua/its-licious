@@ -1,6 +1,0 @@
-<section class="gallery">
-
-  <ng-container *ngFor="let restaurant of restaurants; let i = index;">
-    <app-restaurant-card [restaurant]="restaurant" [index]="i" (selectCard)="selectCard.emit(restaurant)" [isSelected]="selectedRestaurant === restaurant"></app-restaurant-card>
-  </ng-container>
-</section>
