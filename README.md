@@ -6,27 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-
 
 ## Nice to Haves:
 
@@ -79,14 +58,14 @@ Design
 
 Dev
   - Desktop: 2 + 2 + 3 + 2 + 3 + 1 + 1 + 2 + 1 + 2 + 1 + 1
-  - Mobile: 1
+  - Mobile: 1 + 1 + 2
   - API:
     - Yelp: 1.5 + 2
     - google: 1 + 2
 
 
 
-
+total hours: 46.5 
 
 local storage caching
 
@@ -108,3 +87,6 @@ Basil Icon - https://www.flaticon.com/authors/freepik
 Farm Icon - https://www.flaticon.com/authors/popcorns-arts
 wheelchair icon - https://www.flaticon.com/authors/freepik
 Cutlery Icon in logo - https://www.flaticon.com/authors/freepik
+Font Awesome
+Animate.css
+City of Toronto

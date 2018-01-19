@@ -6,11 +6,9 @@
         <i class="fa fa-bars " aria-hidden="true"></i>
       </span>
       <ul class="menu-list" [class.show-links-mobile]="showLinksMobile">
-        <li><a>About</a></li>
+        <li (click)="showAboutModal.emit()"><a>About</a></li>
         <li class="divider">|</li>
-        <li ><a href="https://github.com/MattPua/its-licious" target="_blank">Source</a></li>
-        <li class="divider">|</li>
-        <li><a>Credits</a></li>
+        <li (click)="showCreditsModal.emit()"><a>Credits</a></li>
       </ul>
     </div>
   </nav>

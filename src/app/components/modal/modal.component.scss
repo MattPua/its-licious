@@ -1,0 +1,55 @@
+@import './../../../master';
+
+.modal {
+  @extend .box-shadow;
+  @include border-radius(10px);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  background-color: #fff;
+  margin: 0 auto;
+  top: 25%;
+
+  @media (max-width: $bp-mobile-width) {
+    width: 90%;
+    left: 5%;
+  }
+
+  width: 40%;
+  left: 30%;
+
+
+  h2 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(255, 208, 152, 1);
+    color: white;
+    @include border-radius(10px, 10px, 0 ,0);
+
+    i {
+      position: absolute;
+      right: 10px;
+      font-size: 2rem;
+      top: 5px;
+      transition: 0.5s;
+    }
+  }
+
+  .content {
+    padding: 10px;
+    line-height: 25px;
+  }
+
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $primary-yellow;
+  z-index: 99;
+  transition: 1s;
+}

@@ -1,5 +1,5 @@
 <main>
-  <app-header></app-header>
+  <app-header (showAboutModal)="showAboutModal = !showAboutModal" (showCreditsModal)="showCreditsModal = !showCreditsModal"></app-header>
   <section class="content">
     <span class="floating" (click)="mobileShowFilter = true">
       <i class="fa fa-filter" aria-hidden="true"></i>
@@ -14,9 +14,78 @@
         <button class="btn" [class.active]="showMap" (click)="showMap = true; selectedRestaurant = null;">Map View</button>
       </div>
 
-      <app-gallery *ngIf="!showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants" [selectedRestaurant]="selectedRestaurant"></app-gallery>
+      <app-gallery *ngIf="!showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants" [selectedRestaurant]="selectedRestaurant" [hasDoneInitialLoad]="hasDoneInitialLoad"></app-gallery>
       <app-map *ngIf="showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants" [selectedRestaurant]="selectedRestaurant"></app-map>
     </div>
     <app-restaurant-expanded *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant" (resetSelectedRestaurant)="selectedRestaurant = null" ></app-restaurant-expanded>
   </section>
+
+  <app-modal *ngIf="showAboutModal" title="About" (closeModal)="showAboutModal = !showAboutModal">
+    <p style="text-align: center;">
+      <b>Its-Licious</b> is a 48 total hour challenge to design and build a project from scratch, with as little outside help or work as possible.
+    </p>
+    <br/>
+    <p style="text-align: center;">
+        The goal of <b>Its-Licious</b> is to help people find a good place to eat for <a href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/">Winterlicious 2018 in Toronto</a>.
+    </p>
+    <p style="text-align: center;">
+      Like what you see? Feel free to give me a shout!
+    </p>
+    <br/>
+    <p style="text-align: center; font-size: 1.5rem;">
+      <a target="_blank" href="mailto:matthewpua@gmail.com" >
+        Email
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      or
+      <a href="https://github.com/MattPua/its-licious" target="_blank">
+        Source
+        <i class="fa fa-github-alt" aria-hidden="true"></i>
+      </a>
+    </p>
+  </app-modal>
+  <app-modal *ngIf="showCreditsModal" title="Credits" (closeModal)="showCreditsModal = !showCreditsModal">
+    <p style="text-align: center">
+      This project greatly benefitted from the work from the following places and people:
+    </p>
+    <br/>
+    <ul class="credits">
+      <li>
+        <a href="https://www.flaticon.com/authors/freepik" target="_blank">Spinach Icon: Freepik</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/authors/freepik" target="_blank">
+            Basil Icon: Freepik
+        </a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/authors/popcorns-arts" target="_blank">
+          Farm Icon: Popcorn-Arts
+        </a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/authors/freepik" target="_blank">
+          wheelchair icon: Freepik
+        </a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/authors/freepik">
+          Cutlery Icon in Logo: Freepik
+        </a>
+      </li>
+      <li>
+        <a href="http://fontawesome.io/" target="_blank">
+        FontAwesome for great Icons: Dave Gandy
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/daneden/animate.css" target="_blank">Animations via Animate.css: DaneDen</a>
+      </li>
+      <li>
+        <a href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/restaurants-menus/?view=tabList" target="_blank">
+          Restaurant Information and Images: City of Toronto
+        </a>
+      </li>
+    </ul>
+  </app-modal>
 </main>

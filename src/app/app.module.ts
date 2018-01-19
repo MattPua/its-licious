@@ -17,6 +17,7 @@ import { YelpRatingComponent } from './components/yelp-rating/yelp-rating.compon
 import { SocialReviewComponent } from './components/social-review/social-review.component';
 import { ContactInfoComponent } from './components/restaurant-expanded/contact-info/contact-info.component';
 import { MapComponent } from './components/map/map.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MapComponent } from './components/map/map.component';
     SocialReviewComponent,
     ContactInfoComponent,
     MapComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

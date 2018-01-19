@@ -9,9 +9,10 @@ import { race } from 'q';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'app';
-  winterlicious: Winterlicious = new Winterlicious();
 
+  hasDoneInitialLoad: boolean = false;
+
+  winterlicious: Winterlicious = new Winterlicious();
   selectedRestaurant: Restaurant = null;
   filter: Filter = new Filter();
   showMap: boolean = false;
@@ -19,6 +20,9 @@ export class AppComponent implements OnInit{
   restaurantsToDisplay: Restaurant[] = [];
 
   mobileShowFilter: boolean = false;
+
+  showAboutModal: boolean = false;
+  showCreditsModal: boolean = false;
 
   constructor(private restaurantService: RestaurantService, private zone: NgZone) {}
 
@@ -42,6 +46,8 @@ export class AppComponent implements OnInit{
   }
 
   private _getUpdatedRestaurants() {
+    if (!this.hasDoneInitialLoad && this.winterlicious.restaurants.length) this.hasDoneInitialLoad = true;
+
     this.restaurantsToDisplay = this.winterlicious.restaurants
     .filter((r) => {
       return this.checkFilters(r);

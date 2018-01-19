@@ -1,0 +1,12 @@
+<section class="modal animated rollIn" #modal>
+  <div class="">
+    <h2>
+      {{title}}
+      <i class="fa fa-times" aria-hidden="true" (click)="onCloseModal()"></i>
+    </h2>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</section>
+<div class="background animated zoomIn" #background></div>

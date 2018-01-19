@@ -9,6 +9,7 @@ import { Restaurant } from '../../classes/winterlicious';
 export class GalleryComponent implements OnInit {
   @Input() restaurants: Restaurant[];
   @Input() selectedRestaurant: Restaurant;
+  @Input() hasDoneInitialLoad: boolean = false;
   @Output() selectCard: EventEmitter<Restaurant> = new EventEmitter();
   constructor() { }
 

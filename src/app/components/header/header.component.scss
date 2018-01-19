@@ -9,7 +9,7 @@ nav {
     list-style: none;
     padding-left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex: 1;
   }
 
@@ -61,12 +61,11 @@ nav {
           display: none;
         }
         position: absolute;
-        bottom: -105px;
         background-color: $primary-yellow;
         flex-direction: column;
         right: 0;
         left: 0;
-        bottom: -105px;
+        bottom: -70px;
         align-items: center;
         li {
           border-top: 1px solid white;
