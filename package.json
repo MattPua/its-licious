@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ghpages": "ng build --prod --base-href \"https://mattpua.github.io/its-licious/\" && ngh"
   },
   "private": true,
   "dependencies": {
