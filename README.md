@@ -1,22 +1,25 @@
 # Its-Licious
 
+## Under 48 Hours Background
+
+This project is the result of a challenge I made for myself called **Under 48 Hours.**
+
+The challenge of **Under 48 Hours** is to design, code, build or make from scratch, any project of your choice within a total time limit of 48 working hours. These do not need to be a consecutive 48 hours, but just 48 hours of working time. Once you reach a maximum of **48 hours of work** or completion of the project, you must not continue working on the project anymore, and publish it in its final state for the world to see. 
+
+Why 48 hours? By having an explicit deadline on a new project, the challenge focuses individuals to prioritize what they need to focus on in order to get their project to a workable state. Individuals must factor in the time it takes to design a project, to come up with a solution, deal with any unforeseen technicalities and everything in between to make it to the deadline. 48 hours of work is just long enough time to deliver a great project, but not too short that you don't have enough time.
+
+Interested in the challenge? Try taking on **Under 48 Hours** and let me know how it goes!
+
+## Project Background
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-
-## Nice to Haves:
-
-
-
-* Four Square Reviews
-
-
-
-* service workers
-
 
 
 ## Medium
@@ -87,6 +90,6 @@ Basil Icon - https://www.flaticon.com/authors/freepik
 Farm Icon - https://www.flaticon.com/authors/popcorns-arts
 wheelchair icon - https://www.flaticon.com/authors/freepik
 Cutlery Icon in logo - https://www.flaticon.com/authors/freepik
-Font Awesome
-Animate.css
-City of Toronto
+Font Awesome - http://fontawesome.io/
+Animate.css - https://daneden.github.io/animate.css/
+City of Toronto - https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/restaurants-menus/?view=tabList
