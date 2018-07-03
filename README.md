@@ -12,7 +12,7 @@ Interested in the challenge? Try taking on **Under 48 Hours** and let me know ho
 
 ## Project Background
 
-**Its-Licious** is a responsive single page app (SPA) that allows the user to see all participating restaurants for [Winterlicious in Toronto](https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/restaurants-menus/?view=tabList). The application has various features such as:
+**Its-Licious** is a responsive single page app (SPA) that allows the user to see all participating restaurants for [Winterlicious or Summerlicious in Toronto](https://www.toronto.ca/explore-enjoy/festivals-events/summerlicious/restaurants-menus/?view=tabList). The application has various features such as:
 * filtering restaurants by various criteria such as cuisine type, yelp rating and neighbourhoods
 * making reservations directly online using [OpenTable](https://www.opentable.com/) (only at participating restaurants)
 * viewing all restaurants via Google Map
@@ -77,4 +77,4 @@ An Audience Analysis - http://bit.ly/medium-its-licious-post-analysis
 * [Cutlery Icon in logo](https://www.flaticon.com/authors/freepik)
 * [Font Awesome](http://fontawesome.io/)
 * [Animate.css](https://daneden.github.io/animate.css/)
-* [City of Toronto](https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/restaurants-menus/?view=tabList) - for providing the data and restaurant images
+* [City of Toronto](https://www.toronto.ca/explore-enjoy/festivals-events/summerlicious/restaurants-menus/?view=tabList) - for providing the data and restaurant images
