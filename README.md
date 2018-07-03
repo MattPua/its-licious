@@ -65,8 +65,9 @@ By loosely keeping track of the hours worked for what task, I was able to come u
   **Total Time Spent: 46.5 hours** (1.5 hours short of the challenge limit)
 
 ## Medium
-Interested in reading a lengthier breakdown of the project, from conception to after publishing analysis? Check out the series on Medium.
+Interested in reading a lengthier breakdown of the project, from conception to after publishing analysis? Check out the series on Medium here:
 
+An Audience Analysis - http://bit.ly/medium-its-licious-post-analysis
 
 ## Credits:
 * [Spinach Icon](https://www.flaticon.com/authors/freepik)
