@@ -57,22 +57,22 @@
         <div class="form-group" [class.active]="accessible.value">
           <span>Accessible Restaurant</span>
           <input type="checkbox" formControlName="accessible"/>
-          <img (click)="accessible.setValue(!accessible.value)" src="https://mattpua.github.io/its-licious/assets/icons/accessible.svg" height="32" width="32" />
+          <img (click)="accessible.setValue(!accessible.value)" src="{{ '/assets/icons/accessible.svg' | staticp }}" height="32" width="32" />
         </div>
         <div class="form-group" [class.active]="vegetarian.value">
           <span>Vegetarian Menu Available</span>
           <input type="checkbox" formControlName="vegetarian"/>
-          <img (click)="vegetarian.setValue(!vegetarian.value)" src="https://mattpua.github.io/its-licious/assets/icons/spinach.svg" height="32" width="32"/>
+          <img (click)="vegetarian.setValue(!vegetarian.value)" src="{{ '/assets/icons/spinach.svg' | staticp }}" height="32" width="32"/>
         </div>
         <div class="form-group" [class.active]="vegan.value">
           <span>Vegan Menu Available</span>
           <input type="checkbox" formControlName="vegan"/>
-          <img (click)="vegan.setValue(!vegan.value)" src="https://mattpua.github.io/its-licious/assets/icons/basil.svg" height="32" width="32" />
+          <img (click)="vegan.setValue(!vegan.value)" src="{{ '/assets/icons/basil.svg' | staticp }}" height="32" width="32" />
         </div>
         <div class="form-group" [class.active]="local.value">
           <span>Locally Sourced Menu</span>
           <input type="checkbox" formControlName="local"/>
-          <img (click)="local.setValue(!local.value)" src="https://mattpua.github.io/its-licious/assets/icons/farm.svg" height="32" width="32" />
+          <img (click)="local.setValue(!local.value)" src="{{ '/assets/icons/farm.svg' | staticp }}" height="32" width="32" />
         </div>
       </fieldset>
       <fieldset class="ratings" ormGroupName="rating">

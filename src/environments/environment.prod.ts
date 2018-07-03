@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  staticResourceRoot: 'https://mattpua.github.io/its-licious',
 };

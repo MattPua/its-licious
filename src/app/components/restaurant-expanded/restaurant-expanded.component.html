@@ -15,7 +15,7 @@
         <ng-container *ngIf="restaurant.hasOpenMenu">
           <h3 class="title">
             Make a Reservation with
-            <a href="https://www.opentable.com/toronto-restaurants" target="_blank"><img src="https://mattpua.github.io/its-licious/assets/open_table.png" alt="Open Table" height="40" /></a>
+            <a href="https://www.opentable.com/toronto-restaurants" target="_blank"><img src="{{ '/assets/open_table.png' | staticp }}" alt="Open Table" height="40" /></a>
           </h3>
           <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary btn-large" [href]="restaurant.lic_lunchlink" target="_blank">Lunch</a>
           <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary btn-large" [href]="restaurant.lic_dinnerlink" target="_blank">Dinner</a>

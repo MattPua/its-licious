@@ -5,4 +5,5 @@
 
 export const environment = {
   production: false,
+  staticResourceRoot: 'http://localhost:4200',
 };

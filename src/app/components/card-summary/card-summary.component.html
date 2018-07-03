@@ -11,10 +11,10 @@
         {{restaurant.displayPrice}}
       </span>
       <div class="preferences">
-        <img *ngIf="restaurant.lic_accessible" src="https://mattpua.github.io/its-licious/assets/icons/accessible.svg" height="32" width="32" />
-        <img *ngIf="restaurant.lic_veggie" src="https://mattpua.github.io/its-licious/assets/icons/spinach.svg" height="32" width="32" />
-        <img *ngIf="restaurant.lic_vegan" src="https://mattpua.github.io/its-licious/assets/icons/basil.svg" height="32" width="32"/>
-        <img *ngIf="restaurant.lic_local" src="https://mattpua.github.io/its-licious/assets/icons/farm.svg" height="32" width="32" />
+        <img *ngIf="restaurant.lic_accessible" src="{{ '/assets/icons/accessible.svg' | staticp }}" height="32" width="32" />
+        <img *ngIf="restaurant.lic_veggie" src="{{ '/assets/icons/spinach.svg' | staticp }} " height="32" width="32" />
+        <img *ngIf="restaurant.lic_vegan" src="{{ '/assets/icons/basil.svg' | staticp }}" height="32" width="32"/>
+        <img *ngIf="restaurant.lic_local" src="{{ '/assets/icons/farm.svg' | staticp }}" height="32" width="32" />
       </div>
     </div>
     <div class="right">

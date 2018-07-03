@@ -7,8 +7,8 @@
   <div class="attribution">
     <b>{{reviewPosterType}}</b>
     <a [href]="url" target="_blank">
-      <img *ngIf="isYelpReview" class="logo" src="https://mattpua.github.io/its-licious/assets/yelp/Yelp_trademark_RGB_outline.png" alt="Yelp Logo" height="50" />
-      <img *ngIf="isGoogleReview" class="logo" src="https://mattpua.github.io/its-licious/assets/google/powered-by-google/desktop/powered_by_google_on_white.png" alt="Google Logo" height="18" />
+      <img *ngIf="isYelpReview" class="logo" src="{{ '/assets/yelp/Yelp_trademark_RGB_outline.png' | staticp }}" alt="Yelp Logo" height="50" />
+      <img *ngIf="isGoogleReview" class="logo" src="{{ '/assets/google/powered-by-google/desktop/powered_by_google_on_white.png' | staticp }}" alt="Google Logo" height="18" />
     </a>
   </div>
 </section>

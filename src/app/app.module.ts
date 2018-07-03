@@ -18,6 +18,7 @@ import { SocialReviewComponent } from './components/social-review/social-review.
 import { ContactInfoComponent } from './components/restaurant-expanded/contact-info/contact-info.component';
 import { MapComponent } from './components/map/map.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { StaticPathPipe } from './pipes/static-url.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ModalComponent } from './components/modal/modal.component';
     ContactInfoComponent,
     MapComponent,
     ModalComponent,
+    StaticPathPipe
   ],
   imports: [
     BrowserModule,
