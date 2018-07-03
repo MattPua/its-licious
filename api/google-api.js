@@ -80,37 +80,36 @@ function getGooglePlaceDetailsById(r) {
 
 
 module.exports.getGooglePlaceIdByParams = function(r) {
-
-  if (r.googleData && r.googleData.googlePlaceId) {
-    if (!r.googleData.rating) return getGooglePlaceDetailsById(r);
-    else return;
-  }
-  const googleParams = {
-    key: googleApiKey,
-    location: r.lic_lat + ',' + r.lic_lng,
-    radius: 1000,
-    keyword: decodeURIComponent(r.lic_restName),
-    name: decodeURIComponent(r.lic_restName)
-  }
-  return axios.get(googleLookupUrl, {
-    params: googleParams
-  })
-  .then(function(response) {
-    const data = response.data;
-    if (data.results.length) {
-      // Assume that the first result matches is correct
-      r.googleData = {
-        googlePlaceId: data.results[0].place_id
+    if (r.googleData && r.googleData.googlePlaceId) {
+      if (!r.googleData.rating) return getGooglePlaceDetailsById(r);
+      else return;
+    }
+    const googleParams = {
+      key: googleApiKey,
+      location: r.lic_lat + ',' + r.lic_lng,
+      radius: 1000,
+      keyword: decodeURIComponent(r.lic_restName),
+      name: decodeURIComponent(r.lic_restName)
+    }
+    return axios.get(googleLookupUrl, {
+      params: googleParams
+    })
+    .then(function(response) {
+      const data = response.data;
+      if (data.results.length) {
+        // Assume that the first result matches is correct
+        r.googleData = {
+          googlePlaceId: data.results[0].place_id
+        }
+        return getGooglePlaceDetailsById(r);
       }
-      return getGooglePlaceDetailsById(r);
-    }
-    else {
-      console.error('Couldnt find: '  + r.lic_restName + ' via regular nearby search. Trying text search');
-      return getGooglePlaceIdByParamsViaTextSearch(r);
-    }
-  }).catch((err) => {
-    console.error(err);
-    console.error('failed to do lookup for google places for restaurant: '  + r.lic_restName);
-    return null;
-  });
+      else {
+        console.error('Couldnt find: '  + r.lic_restName + ' via regular nearby search. Trying text search');
+        return getGooglePlaceIdByParamsViaTextSearch(r);
+      }
+    }).catch((err) => {
+      console.error(err);
+      console.error('failed to do lookup for google places for restaurant: '  + r.lic_restName);
+      return null;
+    });
 }
