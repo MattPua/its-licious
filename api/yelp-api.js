@@ -78,12 +78,14 @@ module.exports.lookupYelpIdByParams =  function(r){
     state: 'ON',
     country: 'CA',
     address1: r.lic_address,
-    phone: r.lic_phone,
+    phone: r.lic_phone ? r.lic_phone : null,
     latitude: r.lic_lat,
     longitude: r.lic_lng,
     postal_code: r.lic_postal,
     locale: 'en_US'
   };
+
+
 
     if (r.yelpData && r.yelpData.yelpId) {
       if (!r.yelpData.reviews || r.yelpData.reviews.length === 0) return getBusinessReviewsById(r);
@@ -114,8 +116,7 @@ module.exports.lookupYelpIdByParams =  function(r){
       }
     })
     .catch((err) => {
-      console.error(err.message);
-      console.error('failed when doing lookup on yelp data for : ' + r.lic_restName);
+      console.error(err.message, err.response.data, 'failed when doing lookup on yelp data for : ' + r.lic_restName);
       return null;
     });
 }
