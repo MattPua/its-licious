@@ -12,13 +12,20 @@ nav {
     justify-content: space-around;
     flex: 1;
   }
+  .edition {
+    @media screen and (max-width: $bp-mobile-width) {
+      display: none;
+    }
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
 
   .logo {
-    width: 30%;
-    height: 80px;
-    @media (max-width: $bp-mobile-width) {
-      width: 100%;
-    }
+    // width: 30%;
+    margin-left: 10px;
+    height: $header-height;
   }
   .links {
     display: flex;
@@ -29,6 +36,7 @@ nav {
     margin-right: 30px;
     color: white;
 
+    cursor: pointer;
     @media (max-width: $bp-mobile-width) {
       margin-right: 10px;
     }

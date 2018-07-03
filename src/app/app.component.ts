@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
 
   restaurantsToDisplay: Restaurant[] = [];
 
-  mobileShowFilter: boolean = false;
+  showFilter: boolean = false;
 
   showAboutModal: boolean = false;
   showCreditsModal: boolean = false;

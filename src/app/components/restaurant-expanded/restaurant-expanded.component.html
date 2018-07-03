@@ -25,13 +25,13 @@
           <a class="btn btn-primary btn-large" href="tel:{{restaurant.lic_dinnerlink}}" target="_blank">{{ restaurant.lic_phone}}</a>
         </ng-container>
       </div>
-      <div class="profile box">
+      <!-- <div class="profile box">
         <div class="title" (click)="showProfile = !showProfile">
           Profile
           <i class="fa" [class.fa-chevron-down]="showProfile" [class.fa-chevron-up]="!showProfile"  aria-hidden="true"></i>
         </div>
         <div class="content animated" [class.hide]="!showProfile" [innerHtml]="restaurant.lic_profile | keepHtml"></div>
-      </div>
+      </div> -->
       <div class="reviews box">
         <div class="title" (click)="showReviews = !showReviews">
           Reviews

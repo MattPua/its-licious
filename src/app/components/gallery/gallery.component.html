@@ -1,5 +1,8 @@
 <section class="gallery">
+  <ng-container *ngIf="hasDoneInitialLoad">
+    <h3 *ngIf="restaurants.length === 0">No Restaurants found matching that criteria</h3>
+    <h3 class="help-tip" *ngIf="restaurants.length">Click a card to see more details</h3>
+  </ng-container>
+  <h3 *ngIf="!hasDoneInitialLoad && restaurants.length === 0">Searching for Summerlicious Restaurants</h3>
   <app-restaurant-card *ngFor="let restaurant of restaurants; let i = index;" [restaurant]="restaurant" [index]="i" (selectCard)="selectCard.emit(restaurant)" [isSelected]="selectedRestaurant === restaurant"></app-restaurant-card>
-  <h3 *ngIf="hasDoneInitialLoad && restaurants.length === 0">No Restaurants found matching that criteria</h3>
-  <h3 *ngIf="!hasDoneInitialLoad && restaurants.length === 0">Searching for Winterlicious Restaurants</h3>
 </section>

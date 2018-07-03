@@ -14,7 +14,7 @@ export class RestaurantExpandedComponent implements OnInit, OnChanges{
 
   activeMenu: string;
 
-  showProfile: boolean = true;
+  showProfile: boolean = false;
   showMenu: boolean = true;
   showReviews: boolean = true;
 

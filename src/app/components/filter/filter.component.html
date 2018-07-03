@@ -2,14 +2,14 @@
   <div class="fixed">
     <h3>{{totalRestaurants}} Available Restaurants</h3>
     <span class="back" (click)="closeFilter.emit()">
-      <i class="fa fa-angle-right" aria-hidden="true"></i>
+      <span>Hide</span>
     </span>
     <form [formGroup]="form">
       <!-- <pre> {{form.value | json }}</pre> -->
       <div class="form-group">
         <label>Restaurant</label>
         <div class="has-icon" style="display: flex;">
-          <input formControlName="name" style="flex: 1;"/>
+          <input formControlName="name" style="flex: 1;" placeholder="ex: The Red Room"/>
           <i class="fa fa-search left" aria-hidden="true"></i>
         </div>
       </div>
@@ -127,7 +127,7 @@
                   <i class="fa fa-minus-circle" aria-hidden="true"></i>
                 </span>
               </div>
-              <input formControlName="cuisines" #typeAheadRef/>
+              <input formControlName="cuisines" #typeAheadRef placeholder="ex: Chinese"/>
             </div>
             <ng-container *ngIf="form.get('cuisines').value">
             <ul class="match-suggestions">

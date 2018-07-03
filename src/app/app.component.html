@@ -1,12 +1,12 @@
 <main>
   <app-header (showAboutModal)="showAboutModal = !showAboutModal" (showCreditsModal)="showCreditsModal = !showCreditsModal"></app-header>
   <section class="content">
-    <span class="floating" (click)="mobileShowFilter = true">
+    <span class="floating" (click)="showFilter = true">
       <i class="fa fa-filter" aria-hidden="true"></i>
     </span>
 
-    <app-filter [class.show-mobile]="mobileShowFilter" [neighbourhoods]="winterlicious.neighbourhoods" [cuisines]="winterlicious.cuisines"
-    (closeFilter)="mobileShowFilter = false"
+    <app-filter [class.show-filter]="showFilter" [neighbourhoods]="winterlicious.neighbourhoods" [cuisines]="winterlicious.cuisines"
+    (closeFilter)="showFilter = false"
     (filterChanged)="onFilterChanged($event)" [totalRestaurants]="restaurants.length"></app-filter>
     <div class="scrollable">
       <div class="buttons" [class.is-absolute]="showMap">
