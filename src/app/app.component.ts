@@ -99,7 +99,7 @@ export class AppComponent implements OnInit{
       passAvailabilityFilter = false;
     }
     // If any of the filter preferences are chosen
-    else if (Object.values(this.filter.preferences).some((value) => value)) {
+    else if (Object.keys(this.filter.preferences).some((key) => this.filter.preferences[key])) {
       if (this.filter.preferences.accessible && !r.lic_accessible) passPreferencesFilter = false;
       else if (this.filter.preferences.vegan && !r.lic_vegan) passPreferencesFilter = false;
       else if (this.filter.preferences.vegetarian && !r.lic_veggie) passPreferencesFilter = false;
