@@ -23,7 +23,7 @@
     text-align: center;
     margin: 0;
     padding: 10px;
-    background-color: rgba(255, 208, 152, 1);
+    background-color: $active-yellow;
     color: white;
     @include border-radius(10px, 10px, 0 ,0);
 
