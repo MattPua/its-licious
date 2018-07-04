@@ -4,7 +4,9 @@ nav {
   // @extend .box-shadow;
   background-color: $primary-yellow;
   display: flex;
+  height: $header-height;
   justify-content: space-between;
+  align-items: center;
   ul {
     list-style: none;
     padding-left: 0;
@@ -25,7 +27,7 @@ nav {
   .logo {
     // width: 30%;
     margin-left: 10px;
-    height: $header-height;
+    height: 40px;
   }
   .links {
     display: flex;
