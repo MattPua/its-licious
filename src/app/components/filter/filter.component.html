@@ -13,17 +13,7 @@
           <i class="fa fa-search left" aria-hidden="true"></i>
         </div>
       </div>
-      <div class="form-group">
-        <label>Neighbourhoods</label>
-        <div class="has-icon">
-          <select formControlName="neighbourhoods">
-            <option value="any" selected>Any</option>
-            <option *ngFor="let neighbourhood of neighbourhoods" [value]="neighbourhood">{{neighbourhood}}</option>
-          </select>
-          <i class="fa fa-map-marker left" aria-hidden="true"></i>
-          <i class="fa fa-chevron-down right" aria-hidden="true"></i>
-        </div>
-      </div>
+
       <div class="form-group">
         <label>Sort By</label>
         <div class="has-icon">
@@ -42,16 +32,46 @@
         <div class="form-group" [class.active]="lunch.value">
           <span>Lunch</span>
           <input type="checkbox" [formControl]="lunch"/>
-          <i class="fa" (click)="lunch.setValue(!lunch.value)"
-          [class.fa-square-o]="!lunch.value" [class.fa-check-square-o]="lunch.value" aria-hidden="true"></i>
+          <i class="{{ lunch.value ? 'fas' : 'far' }}" (click)="lunch.setValue(!lunch.value)"
+          [class.fa-square.far]="!lunch.value" [class.fa-check-square]="lunch.value" aria-hidden="true"></i>
         </div>
         <div class="form-group" [class.active]="dinner.value">
           <span>Dinner</span>
           <input type="checkbox" formControlName="dinner"/>
-          <i class="fa" (click)="dinner.setValue(!dinner.value)"
-          [class.fa-square-o]="!dinner.value" [class.fa-check-square-o]="dinner.value" aria-hidden="true"></i>
+          <i class="{{ dinner.value ? 'fas' : 'far' }}" (click)="dinner.setValue(!dinner.value)"
+          [class.fa-square]="!dinner.value" [class.fa-check-square]="dinner.value" aria-hidden="true"></i>
         </div>
       </fieldset>
+      <div class="form-group">
+        <label>Cuisines</label>
+        <div class="has-icon">
+          <div class="type-ahead">
+            <div class="wrapper">
+              <div class="selected-matches">
+                <span *ngFor="let match of selectedCuisines" class="pill" (click)="removeSelection(mach)">
+                  <span>{{match}}</span>
+                  <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                </span>
+                <span *ngIf="selectedCuisines.length > 0" class="pill clear-pill" (click)="removeAllSelected()">
+                  <span>Clear All</span>
+                  <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input formControlName="cuisines" #typeAheadRef placeholder="ex: Chinese"/>
+            </div>
+            <ng-container *ngIf="form.get('cuisines').value">
+            <ul class="match-suggestions">
+                <li class="suggestion" tabindex="0" *ngFor="let cuisine of typeAheadMatches"
+                (click)="selectMatch(cuisine)" [class.selected]="selectedCuisines.indexOf(cuisine) >= 0">
+                  {{cuisine}}
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </li>
+                <li class="suggestion" *ngIf="typeAheadMatches.length === 0">No Cuisines Found</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
       <fieldset class="preferences" formGroupName="preferences">
         <label>Preferences</label>
         <div class="form-group" [class.active]="accessible.value">
@@ -113,33 +133,14 @@
         </div> -->
       </fieldset>
       <div class="form-group">
-        <label>Cuisines</label>
+        <label>Neighbourhoods</label>
         <div class="has-icon">
-          <div class="type-ahead">
-            <div class="wrapper">
-              <div class="selected-matches">
-                <span *ngFor="let match of selectedCuisines" class="pill" (click)="removeSelection(mach)">
-                  <span>{{match}}</span>
-                  <i class="fa fa-minus-circle" aria-hidden="true"></i>
-                </span>
-                <span *ngIf="selectedCuisines.length > 0" class="pill clear-pill" (click)="removeAllSelected()">
-                  <span>Clear All</span>
-                  <i class="fa fa-minus-circle" aria-hidden="true"></i>
-                </span>
-              </div>
-              <input formControlName="cuisines" #typeAheadRef placeholder="ex: Chinese"/>
-            </div>
-            <ng-container *ngIf="form.get('cuisines').value">
-            <ul class="match-suggestions">
-                <li class="suggestion" tabindex="0" *ngFor="let cuisine of typeAheadMatches"
-                (click)="selectMatch(cuisine)" [class.selected]="selectedCuisines.indexOf(cuisine) >= 0">
-                  {{cuisine}}
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                </li>
-                <li class="suggestion" *ngIf="typeAheadMatches.length === 0">No Cuisines Found</li>
-              </ul>
-            </ng-container>
-          </div>
+          <select formControlName="neighbourhoods">
+            <option value="any" selected>Any</option>
+            <option *ngFor="let neighbourhood of neighbourhoods" [value]="neighbourhood">{{neighbourhood}}</option>
+          </select>
+          <i class="fa fa-map-marker-alt left" aria-hidden="true"></i>
+          <i class="fa fa-chevron-down right" aria-hidden="true"></i>
         </div>
       </div>
     </form>

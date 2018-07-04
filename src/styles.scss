@@ -3,8 +3,8 @@
 @import 'fonts';
 @import 'normalize';
 @import 'button';
-*, input, select {
-  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+*, input, select, button {
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -17,7 +17,7 @@ ul {
 }
 
 html {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 a {

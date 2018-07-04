@@ -31,8 +31,9 @@
   max-width: 300px;
   min-width: 300px;
   @media screen and (max-width: $bp-mobile-width) {
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 320px;
+    min-width: 320px;
+    margin-bottom: 20px;
   }
   min-height: 340px;
   display: flex;

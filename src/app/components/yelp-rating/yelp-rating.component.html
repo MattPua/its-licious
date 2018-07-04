@@ -10,7 +10,7 @@
   <img src="{{ '/assets/yelp/regular/regular_4_half.png' | staticp }}" alt="4.5 stars" *ngSwitchCase="4.5"/>
   <img src="{{ '/assets/yelp/regular/regular_5.png' | staticp }}" alt="55 stars" *ngSwitchCase="5"/>
   <p *ngIf="showFullDetails">{{yelpData.reviewCount}} reviews</p>
-  <a *ngIf="showFullDetails"[href]="yelpData.yelpUrl" target="_blank">
+  <a *ngIf="showFullDetails"[href]="yelpData.yelpUrl" target="_blank" rel="noopener">
     <img class="logo" src="{{ '/assets/yelp/Yelp_trademark_RGB_outline.png' | staticp }}" alt="Yelp Logo" />
   </a>
 </div>

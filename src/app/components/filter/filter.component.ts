@@ -65,7 +65,7 @@ export class FilterComponent implements OnInit {
   selectMatch(result) {
     if (this._selectedCuisines.indexOf(result) < 0) this._selectedCuisines.push(result);
     else this._selectedCuisines.splice(this._selectedCuisines.findIndex((s) => s === result), 1);
-
+    this.form.controls['cuisines'].setValue('');
     this.typeAheadRef.nativeElement.focus();
     this.updateFilters();
   }

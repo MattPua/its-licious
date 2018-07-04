@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ghpages": "ng build --prod --base-href \"https://mattpua.github.io/its-licious/\" && ngh",
-    "s3-build": "ng build --environment prods3"
+    "s3-build": "ng build --prod --environment prods3"
   },
   "private": true,
   "dependencies": {

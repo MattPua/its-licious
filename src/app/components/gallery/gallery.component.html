@@ -5,4 +5,9 @@
   </ng-container>
   <h3 *ngIf="!hasDoneInitialLoad && restaurants.length === 0">Searching for Summerlicious Restaurants</h3>
   <app-restaurant-card *ngFor="let restaurant of restaurants; let i = index;" [restaurant]="restaurant" [index]="i" (selectCard)="selectCard.emit(restaurant)" [isSelected]="selectedRestaurant === restaurant"></app-restaurant-card>
+  <!-- We use these empty divs to just align items in case theres not enough items to make a full row -->
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
 </section>

@@ -15,14 +15,14 @@
         <ng-container *ngIf="restaurant.hasOpenMenu">
           <h3 class="title">
             Make a Reservation with
-            <a href="https://www.opentable.com/toronto-restaurants" target="_blank"><img src="{{ '/assets/open_table.png' | staticp }}" alt="Open Table" height="40" /></a>
+            <a href="https://www.opentable.com/toronto-restaurants" target="_blank" rel="noopener"><img src="{{ '/assets/open_table.png' | staticp }}" alt="Open Table" height="40" /></a>
           </h3>
-          <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary btn-large" [href]="restaurant.lic_lunchlink" target="_blank">Lunch</a>
-          <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary btn-large" [href]="restaurant.lic_dinnerlink" target="_blank">Dinner</a>
+          <a [class.disabled]="!restaurant.lic_lunchlink" class="btn btn-primary btn-large" [href]="restaurant.lic_lunchlink" target="_blank" rel="noopener">Lunch</a>
+          <a [class.disabled]="!restaurant.lic_dinnerlink" class="btn btn-primary btn-large" [href]="restaurant.lic_dinnerlink" target="_blank" rel="noopener">Dinner</a>
         </ng-container>
         <ng-container *ngIf="!restaurant.hasOpenMenu">
           <h3 class="title">Make a Reservation, call now:</h3>
-          <a class="btn btn-primary btn-large" href="tel:{{restaurant.lic_dinnerlink}}" target="_blank">{{ restaurant.lic_phone}}</a>
+          <a class="btn btn-primary btn-large" href="tel:{{restaurant.lic_dinnerlink}}" target="_blank" rel="noopener">{{ restaurant.lic_phone}}</a>
         </ng-container>
       </div>
       <!-- <div class="profile box">

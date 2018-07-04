@@ -63,7 +63,7 @@
   @extend .box-shadow;
   z-index: 2;
   i {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -71,7 +71,7 @@
 .credits {
   list-style: none;
   li {
-    border-top: 1px solid #000;
+    // border-top: 1px solid #000;
     padding: 10px;
     color: blue;
   }

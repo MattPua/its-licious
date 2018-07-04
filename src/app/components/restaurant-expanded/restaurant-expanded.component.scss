@@ -8,13 +8,18 @@
   }
 }
 .restaurant-expanded {
-  @extend .box-shadow;
   // border: 1px solid $border-gray;
   position: fixed;
   top: $header-height;
   background-color: white;
   overflow: hidden;
   height: 100%;
+  @media screen and (max-width: $bp-mobile-width) {
+    overflow: scroll;
+  }
+  @media screen and (min-width: $bp-mobile-width) {
+    @include box-shadow(0, 3px, 6px, null, rgba(0,0,0, 0.16));
+  }
 }
 
 .box {
@@ -54,7 +59,6 @@
 
 .fixed-info {
   display: flex;
-  border-bottom: 1px solid $border-gray;
   @extend .box-shadow;
   > .margin {
     flex-shrink: 0;
@@ -69,7 +73,10 @@
     padding: 10px 10px 10px 0;
     margin-right: 10px;
   }
-  position: fixed;
+  @media screen and (min-width: $bp-mobile-width) {
+    position: fixed;
+    border-bottom: 1px solid $border-gray;
+  }
   right: 0;
   z-index: 1;
   background-color: white;
@@ -85,7 +92,6 @@
 .scrollable {
   display: flex;
   position: relative;
-  top: $expanded-fixed-height;
   > .margin {
     flex-shrink: 0;
     flex: 1;
@@ -103,8 +109,14 @@
     height: 100%;
     overflow: auto;
   }
-  height: 91vh;
-  overflow-y: auto;
+  @media screen and (max-width: $bp-mobile-width) {
+    overflow: hidden;
+  }
+  @media screen and (min-width: $bp-mobile-width) {
+    overflow-y: auto;
+    top: $expanded-fixed-height;
+    height: calc(100vh - 300px);
+  }
 
 }
 
@@ -120,10 +132,6 @@
 
 #map {
   height: 400px;
-}
-
-.location {
-  padding-bottom: 200px;
 }
 
 .hide {

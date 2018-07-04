@@ -251,6 +251,10 @@ input[type=checkbox] {
   .match-suggestions {
     padding-left: 0;
     border: 1px solid $primary-yellow;
+    position: absolute;
+    background: white;
+    width: 100%;
+    z-index: 1;
     .suggestion {
       list-style: none;
       padding: 10px;
@@ -275,7 +279,16 @@ input[type=checkbox] {
   cursor: pointer;
   right: 10px;
   position: absolute;
-
+  background-color: $primary-yellow;
+  color: #fff;
+  padding: 5px;
+  @include border-radius(50%);
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 
 @media (min-width: $bp-mobile-width) {
@@ -289,18 +302,5 @@ input[type=checkbox] {
   }
   .back {
     top: 10px;
-    background-color: $primary-yellow;
-    color: #fff;
-    padding: 5px;
-    @include border-radius(50%);
-    height: 32px;
-    width: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    i {
-      font-size: 2rem;
-    }
   }
 }

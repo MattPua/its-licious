@@ -1,7 +1,6 @@
 @import 'master';
 
 .btn {
-  font-family: 'Gotham';
   @include border-radius(5px);
   text-align: center;
   padding: 5px 25px;
