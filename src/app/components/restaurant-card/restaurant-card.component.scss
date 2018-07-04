@@ -20,6 +20,9 @@
 
 .restaurant {
   border: 1px solid $border-gray;
+  @media screen and (min-width: 1200px) {
+    margin: 20px;
+  }
   @include border-radius(2px);
   @extend .box-shadow;
   flex: 1;
