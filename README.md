@@ -45,6 +45,11 @@ External Packages/Assets included (apart from the packages that come from genera
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+
+## Future Improvements
+* Pagination/Lazy Loading
+* Gzip json files
+
 ## Design
 
 
