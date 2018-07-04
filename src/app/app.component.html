@@ -1,7 +1,7 @@
 <main>
   <app-header (showAboutModal)="showAboutModal = !showAboutModal" (showCreditsModal)="showCreditsModal = !showCreditsModal"></app-header>
   <section class="content">
-    <span class="floating" (click)="showFilter = true">
+    <span class="floating" (click)="showFilter = true" *ngIf="!showFilter">
       <i class="fa fa-filter" aria-hidden="true"></i>
     </span>
 
