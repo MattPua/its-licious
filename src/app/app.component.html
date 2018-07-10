@@ -1,4 +1,5 @@
 <main>
+  <div [jsonSchema]="schema"></div>
   <app-header (showAboutModal)="showAboutModal = !showAboutModal" (showCreditsModal)="showCreditsModal = !showCreditsModal"></app-header>
   <section class="content">
     <span class="floating" (click)="showFilter = true" *ngIf="!showFilter">

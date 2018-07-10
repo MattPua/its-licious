@@ -42,6 +42,10 @@ export class Restaurant {
   googleData: GoogleData;
 
   _displayPrice: string;
+
+  jsonLdSchema = [];
+
+
   get displayPrice(): string {
     if (this.lic_lunchprice && this.lic_dinnerprice) {
       return `${this.lic_lunchprice} | ${this.lic_dinnerprice}`;
@@ -77,7 +81,7 @@ export class GoogleReview {
   text: string;
 }
 
-export class YelpData {
+export interface YelpData {
   yelpId: string;
   imageUrl: string;
   photos: string[];
@@ -86,7 +90,7 @@ export class YelpData {
   yelpUrl: string;
   reviews: YelpReview[];
 }
-export class GoogleData {
+export interface GoogleData {
   googlePlaceId: string;
   rating: number;
   reviews: GoogleReview[];
