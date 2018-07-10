@@ -19,7 +19,32 @@ export class RestaurantService {
         restaurant.lic_vegan = restaurant.lic_vegan === 'No';
         restaurant.lic_veggie = restaurant.lic_veggie === 'No';
         restaurant.lic_local = restaurant.lic_local === 'No';
-
+        restaurant.jsonLdSchema = [{
+          '@context': 'http://schema.org',
+          '@graph': [
+            {
+              '@type': 'Restaurant',
+              name: restaurant.lic_restName,
+              servesCuisine: restaurant.lic_cuisine,
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: restaurant.lic_address,
+                addressLocality: 'Toronto',
+                addressRegion: 'Ontario',
+                addressCountry: 'Canada',
+                postalCode: restaurant.lic_postal
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: restaurant.lic_lat,
+                longitude: restaurant.lic_lng
+              },
+              url: restaurant.lic_url,
+              telephone: restaurant.lic_phone,
+              image: 'https://www.toronto.ca/ext/edc/licious/restaurant_images/' + restaurant.lic_imagelink
+            }
+          ]
+        }];
         return Object.assign(new Restaurant(), restaurant);
       });
       return winterlicious;

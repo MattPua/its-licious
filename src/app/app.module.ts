@@ -19,6 +19,7 @@ import { ContactInfoComponent } from './components/restaurant-expanded/contact-i
 import { MapComponent } from './components/map/map.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { StaticPathPipe } from './pipes/static-url.pipe';
+import { JsonLdSchemaDirective } from './directives/json-ld-schema.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { StaticPathPipe } from './pipes/static-url.pipe';
     ContactInfoComponent,
     MapComponent,
     ModalComponent,
-    StaticPathPipe
+    StaticPathPipe,
+    JsonLdSchemaDirective
   ],
   imports: [
     BrowserModule,

@@ -23,12 +23,16 @@ export class AppComponent implements OnInit{
 
   showAboutModal: boolean = false;
   showCreditsModal: boolean = false;
+  schema = [];
 
   constructor(private restaurantService: RestaurantService, private zone: NgZone) {}
 
   ngOnInit() {
     this.restaurantService.getRestaurants().then((r) => {
       this.winterlicious = r;
+      this.zone.runOutsideAngular(() => {
+        this.setSchema();
+      });
       this._getUpdatedRestaurants();
     });
   }
@@ -113,6 +117,27 @@ export class AppComponent implements OnInit{
     }
 
     return passNameFilter && passNeighbourhoodFilter && passPreferencesFilter && passCuisinesFilter && passAvailabilityFilter && passRatingsFilter;
+  }
+
+  setSchema() {
+    if (!this.winterlicious) return;
+    const itemListElements = this.winterlicious.restaurants.map((rest: Restaurant, index: number) => {
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        item: rest.jsonLdSchema[0]['@graph']
+      };
+    });
+
+    this.schema = [{
+      '@context': 'http://schema.org',
+      '@graph': [
+        {
+          '@type': 'ItemList',
+          'itemListElement': itemListElements
+        }
+      ]
+    }];
   }
 
 }

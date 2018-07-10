@@ -1,4 +1,5 @@
 <div class="restaurant" [class.selected]="isSelected" (click)="selectCard.emit(restaurant)">
+  <div [jsonSchema]="restaurant.jsonLdSchema"></div>
   <span class="index">{{index + 1}}</span>
   <div class="images">
     <img [src]="image" alt="restaurant image"/>
