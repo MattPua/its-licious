@@ -14,7 +14,7 @@ export class RestaurantService {
       winterlicious.neighbourhoods = r.neighbourhoods;
       winterlicious.restaurants = r.restaurants.map((restaurant) => {
         restaurant.googleData.reviews = restaurant.googleData.reviews.map((review) => Object.assign(new GoogleReview(), review));
-        restaurant.yelpData.reviews = restaurant.yelpData.reviews.map((review) => Object.assign(new YelpReview(), review));
+        restaurant.yelpData.reviews = restaurant.yelpData.reviews ? restaurant.yelpData.reviews.map((review) => Object.assign(new YelpReview(), review)) : [];
         restaurant.lic_accessible = restaurant.lic_accessible === 'No';
         restaurant.lic_vegan = restaurant.lic_vegan === 'No';
         restaurant.lic_veggie = restaurant.lic_veggie === 'No';
