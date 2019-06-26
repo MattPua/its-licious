@@ -1,40 +1,48 @@
 <main>
   <div [jsonSchema]="schema"></div>
-  <app-header (showAboutModal)="showAboutModal = !showAboutModal" (showCreditsModal)="showCreditsModal = !showCreditsModal"></app-header>
+  <app-header (showAboutModal)="showAboutModal = !showAboutModal"
+    (showCreditsModal)="showCreditsModal = !showCreditsModal"></app-header>
   <section class="content">
     <span class="floating" (click)="showFilter = true" *ngIf="!showFilter">
       <i class="fa fa-filter" aria-hidden="true"></i>
     </span>
 
-    <app-filter [class.show-filter]="showFilter" [neighbourhoods]="winterlicious.neighbourhoods" [cuisines]="winterlicious.cuisines"
-    (closeFilter)="showFilter = false"
-    (filterChanged)="onFilterChanged($event)" [totalRestaurants]="restaurants.length"></app-filter>
+    <app-filter [class.show-filter]="showFilter" [neighbourhoods]="winterlicious.neighbourhoods"
+      [cuisines]="winterlicious.cuisines" (closeFilter)="showFilter = false" (filterChanged)="onFilterChanged($event)"
+      [totalRestaurants]="restaurants.length"></app-filter>
     <div class="scrollable">
       <div class="buttons" [class.is-absolute]="showMap">
-        <button class="btn" [class.active]="!showMap" (click)="showMap = false; selectedRestaurant = null;">Gallery View</button>
-        <button class="btn" [class.active]="showMap" (click)="showMap = true; selectedRestaurant = null;">Map View</button>
+        <button class="btn" [class.active]="!showMap" (click)="showMap = false; selectedRestaurant = null;">Gallery
+          View</button>
+        <button class="btn" [class.active]="showMap" (click)="showMap = true; selectedRestaurant = null;">Map
+          View</button>
       </div>
 
-      <app-gallery *ngIf="!showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants" [selectedRestaurant]="selectedRestaurant" [hasDoneInitialLoad]="hasDoneInitialLoad"></app-gallery>
-      <app-map *ngIf="showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants" [selectedRestaurant]="selectedRestaurant"></app-map>
+      <app-gallery *ngIf="!showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants"
+        [selectedRestaurant]="selectedRestaurant" [hasDoneInitialLoad]="hasDoneInitialLoad"></app-gallery>
+      <app-map *ngIf="showMap" (selectCard)="onSelectCard($event)" [restaurants]="restaurants"
+        [selectedRestaurant]="selectedRestaurant"></app-map>
     </div>
-    <app-restaurant-expanded *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant" (resetSelectedRestaurant)="selectedRestaurant = null" ></app-restaurant-expanded>
+    <app-restaurant-expanded *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant"
+      (resetSelectedRestaurant)="selectedRestaurant = null"></app-restaurant-expanded>
   </section>
 
   <app-modal *ngIf="showAboutModal" title="About" (closeModal)="showAboutModal = !showAboutModal">
     <p style="text-align: center;">
-      <b>Its-Licious</b> is a 48 total hour challenge to design and build a project from scratch, with as little outside help or work as possible.
+      <b>Its-Licious</b> is a 48 total hour challenge to design and build a project from scratch, with as little outside
+      help or work as possible.
     </p>
-    <br/>
+    <br />
     <p style="text-align: center;">
-        The goal of <b>Its-Licious</b> is to help people find a good place to eat for <a href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/">Summerlicious 2018 in Toronto</a>.
+      The goal of <b>Its-Licious</b> is to help people find a good place to eat for <a
+        href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/">Summerlicious 2019 in Toronto</a>.
     </p>
     <p style="text-align: center;">
       Like what you see? Feel free to give me a shout!
     </p>
-    <br/>
+    <br />
     <p style="text-align: center; font-size: 1.5rem;">
-      <a target="_blank" rel="noopener" href="mailto:matthewpua@gmail.com" >
+      <a target="_blank" rel="noopener" href="mailto:matthewpua@gmail.com">
         Email
         <i class="fa fa-envelope" aria-hidden="true"></i>
       </a>
@@ -49,14 +57,14 @@
     <p style="text-align: center">
       This project greatly benefitted from the work from the following places and people:
     </p>
-    <br/>
+    <br />
     <ul class="credits">
       <li>
         <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener">Spinach Icon: Freepik</a>
       </li>
       <li>
         <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener">
-            Basil Icon: Freepik
+          Basil Icon: Freepik
         </a>
       </li>
       <li>
@@ -76,14 +84,16 @@
       </li>
       <li>
         <a href="http://fontawesome.io/" target="_blank" rel="noopener">
-        FontAwesome for great Icons: Dave Gandy
+          FontAwesome for great Icons: Dave Gandy
         </a>
       </li>
       <li>
-        <a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">Animations via Animate.css: DaneDen</a>
+        <a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">Animations via Animate.css:
+          DaneDen</a>
       </li>
       <li>
-        <a href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/restaurants-menus/?view=tabList" target="_blank">
+        <a href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/restaurants-menus/?view=tabList"
+          target="_blank">
           Restaurant Information and Images: City of Toronto
         </a>
       </li>
